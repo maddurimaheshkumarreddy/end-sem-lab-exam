@@ -30,7 +30,7 @@
 
 <script>
     document.getElementById("feedbackForm").addEventListener("submit", function(event){
-        event.preventDefault(); // Stop default form submit
+        event.preventDefault(); 
 
         let name = document.getElementById("name").value;
         let course = document.getElementById("course").value;
@@ -38,20 +38,16 @@
         let comments = document.getElementById("comments").value;
         let file = document.getElementById("fileUpload").files[0];
 
-        // Validation
         if(name === "" || course === "" || rating === "" || !file){
             alert("Please fill all fields and upload a file.");
             return;
         }
-
-        // Log form data
         console.log("Name:", name);
         console.log("Course:", course);
         console.log("Rating:", rating);
         console.log("Comments:", comments);
         console.log("Uploaded File:", file.name);
 
-        // Show success message
         document.getElementById("message").innerText = "Feedback submitted successfully!";
     });
 </script>
